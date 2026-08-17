@@ -43,13 +43,68 @@ For each sub-problem, apply CT skills:
 
 | Sub-Problem | CT Skill | Example Solution |
 | ----- | ----- | ----- |
-| 1 |  |  |
-| 2 |  |  |
-| 3 |  |  |
+| 1 | Algorithm Design | Design a step-by-step ordering process for a simple POS system: cashier selects item(s) from a pre-loaded menu, the system automatically computes the total and change, then prints or displays the receipt. |
+| 2 | Abstraction | Strip away unnecessary details of the full kitchen inventory and show students only what matters to them, a simple digital or printed menu board with item names, prices, and availability, posted before they reach the cashier. |
+| 3 | Pattern Recognition | Track daily sales data to notice recurring patterns (e.g., rice runs out fastest during Monday lunches) and use these patterns to predict restocking needs and flag low-supply items automatically. |
 
  
 
 **Step 4: Draw a flowchart or write a pseudocode for the identified sub-problem**
+
+**Pseudocode for Sub-Problem 1: Point of Sale (POS) System**
+
+```
+START
+DISPLAY menu items with prices
+SET total = 0
+
+WHILE student is still ordering DO
+    CASHIER selects item from menu
+    IF item is available THEN
+        ADD item price to total
+        DECREASE item stock by 1
+        DISPLAY item added to order
+    ELSE
+        DISPLAY "Item out of stock"
+    END IF
+    ASK "Add another item? (Y/N)"
+END WHILE
+
+DISPLAY total amount due
+CASHIER enters amount paid by student
+CALCULATE change = amount paid - total
+
+IF amount paid < total THEN
+    DISPLAY "Insufficient payment, please add more"
+ELSE
+    DISPLAY change due
+    PRINT receipt
+    IF any item stock <= low-stock threshold THEN
+        FLAG item for restocking
+    END IF
+END IF
+
+END
+```
+
+**Flowchart (described in steps, corresponding to the pseudocode above):**
+
+1. **Start**
+2. Display menu with prices → 
+3. Decision: Is the student still ordering? 
+   - **Yes** → Cashier selects an item → Decision: Is item in stock? 
+     - **Yes** → Add price to total, reduce stock, show item added → loop back to step 3 
+     - **No** → Display "Out of stock" → loop back to step 3 
+   - **No** → proceed to step 4
+4. Display total amount due
+5. Cashier enters payment
+6. Decision: Is payment enough? 
+   - **No** → Display "Insufficient payment" → return to step 5 
+   - **Yes** → Calculate and display change, print receipt
+7. Decision: Is stock low for any item? 
+   - **Yes** → Flag item for restocking 
+   - **No** → skip
+8. **End**
 
 **Rubrics For Grading**
 
