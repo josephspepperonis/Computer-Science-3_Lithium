@@ -13,11 +13,11 @@ The PSHS school canteen is small and often gets crowded during lunch break. Stud
 * The cashier has to manually calculate totals and give change.  
 * There is no system to track which food items are running out.
 
-Your group’s task is to **decompose this problem** into smaller, manageable parts that could be solved with computational thinking (CT) Skills.
+Your group's task is to **decompose this problem** into smaller, manageable parts that could be solved with computational thinking (CT) Skills.
 
 **Step 1: Identify the Big Problem**
 
-Main Problem: *The main problem is that there are no preparedness for both the staff and students. The students dont know what is on the menu beforehand, nor do the staff have an established POS system.*
+Main Problem: *The primary issue pertains to the lack of a POS system. Consequently, students remain uninformed about the menu in advance, and the staff lacks an established procedure for managing these operations effectively.*
 
 
 
@@ -25,15 +25,15 @@ Main Problem: *The main problem is that there are no preparedness for both the s
 
 Please list possible sub-problems:
 
-1. The cashiers are missing a Point Of Sale (POS) system, making fast lines sluggish and complex orders hard to read.
+1. The absence of a Point Of Sale (POS) system for cashiers results in slow-moving lines and difficulty in processing complex orders.
 
    
 
-2. The students dont know what are on menu before the line, so they are left to choose on the spot.
+2. Students face the challenge of making quick decisions as they are unaware of the menu options prior to queuing.
 
    
 
-3. The staff dont have a centralized supply management system, and therefore, cant foresee the input and output of food supplies.
+3. The staff lacks a centralized supply management system, which consequently hinders their ability to anticipate food supplies' input and output.
 
    
 
@@ -43,51 +43,15 @@ For each sub-problem, apply CT skills:
 
 | Sub-Problem | CT Skill | Example Solution |
 | ----- | ----- | ----- |
-| 1 | Algorithm Design | Design a step-by-step ordering process for a simple POS system: cashier selects item(s) from a pre-loaded menu, the system automatically computes the total and change, then prints or displays the receipt. |
-| 2 | Abstraction | Strip away unnecessary details of the full kitchen inventory and show students only what matters to them, a simple digital or printed menu board with item names, prices, and availability, posted before they reach the cashier. |
-| 3 | Pattern Recognition | Track daily sales data to notice recurring patterns (e.g., rice runs out fastest during Monday lunches) and use these patterns to predict restocking needs and flag low-supply items automatically. |
+| 1 | Algorithm Design | In designing a step-by-step ordering process for a simple POS system, the cashier first selects the item(s) from a pre-loaded menu. Subsequently, the system automatically computes the total and change, and finally, it prints or displays the receipt. |
+| 2 | Abstraction | Present students with an efficient digital or printed menu board, displaying only essential information such as item names, prices, and availability. This should be showcased before they approach the cashier, removing extraneous kitchen inventory details. |
+| 3 | Pattern Recognition | Monitoring daily sales data meticulously can reveal recurring patterns, such as rice depleting most swiftly during Monday lunches. These insights are invaluable for forecasting restocking requirements and automatically identifying items with low supply. |
 
  
 
 **Step 4: Draw a flowchart or write a pseudocode for the identified sub-problem**
 
-**Pseudocode for Sub-Problem 1: Point of Sale (POS) System**
-
-```
-START
-DISPLAY menu items with prices
-SET total = 0
-
-WHILE student is still ordering DO
-    CASHIER selects item from menu
-    IF item is available THEN
-        ADD item price to total
-        DECREASE item stock by 1
-        DISPLAY item added to order
-    ELSE
-        DISPLAY "Item out of stock"
-    END IF
-    ASK "Add another item? (Y/N)"
-END WHILE
-
-DISPLAY total amount due
-CASHIER enters amount paid by student
-CALCULATE change = amount paid - total
-
-IF amount paid < total THEN
-    DISPLAY "Insufficient payment, please add more"
-ELSE
-    DISPLAY change due
-    PRINT receipt
-    IF any item stock <= low-stock threshold THEN
-        FLAG item for restocking
-    END IF
-END IF
-
-END
-```
-
-**Flowchart (described in steps, corresponding to the pseudocode above):**
+**Flowchart for Sub-Problem 1: Point of Sale (POS) System**
 
 1. **Start**
 2. Display menu with prices → 
